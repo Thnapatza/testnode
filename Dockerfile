@@ -1,7 +1,8 @@
-#Use and existing docker image as a base
-FROM node:alpine
-WORKDIR '/node'
+FROM node:12-buster-slim
+
+WORKDIR /usr/src/app
 COPY package.json ./
 RUN npm install
 COPY . .
-CMD ["npm","run","dev"]
+
+CMD ["npm", "start"]
